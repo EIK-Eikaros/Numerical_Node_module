@@ -11,7 +11,6 @@
     "license": "ISC",
     "type": "module",
     "dependencies": {
-        "body-parse": "^0.1.0",
         "body-parser": "^1.19.0",
         "conjugate-gradient": "0.0.2",
         "cors": "^2.8.5",
