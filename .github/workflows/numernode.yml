@@ -1,0 +1,24 @@
+name: numernode
+
+on:
+  push: 
+    branches: [ main ]
+jobs:
+  push_to_registry: 
+    name: push docker hub node numer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Docker Login
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - name: Build Docker node numer 
+        run: |
+          docker build . -t ingcharat/numer-node:lastest
+      - name: Push to Docker node numer
+        run: |
+          docker push ingcharat/numer-node:lastest
