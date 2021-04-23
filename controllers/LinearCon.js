@@ -1,4 +1,4 @@
-import { multiply, transpose, det, round, lusolve, inv } from 'mathjs'
+import { multiply, transpose, det, round, lusolve, inv, mad } from 'mathjs'
 import linSystem from 'linear-equation-system'
 import rref from 'rref'
 import { fromDense } from 'csr-matrix'
@@ -243,7 +243,7 @@ export const Conjugate = (req, res) => {
         res.json({
             answer: round(result),
             posi: posi,
-            last: multiply(mo, round(result)),
+            last: round(multiply(multiply(inv(transpose(mo)), mA),result),1),
         })
     } else {
         res.json({})
