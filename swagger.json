@@ -21,109 +21,109 @@
     ],
     "schemes": ["http"],
     "paths": {
-        "/Rof/BS": {
+        "api/Rof/BS": {
             "post": {
                 "tags": ["Root of Equation"],
                 "description": "Bisection Method"
             }
         },
-        "/Rof/FS": {
+        "api/Rof/FS": {
             "post": {
                 "tags": ["Root of Equation"],
                 "description": "False-Position Method"
             }
         },
-        "/Rof/OP": {
+        "api/Rof/OP": {
             "post": {
                 "tags": ["Root of Equation"],
                 "description": "One-Point Iteration Method"
             }
         },
-        "/Rof/RP": {
+        "api/Rof/RP": {
             "post": {
                 "tags": ["Root of Equation"],
                 "description": "Newton's Raphson Method"
             }
         },
-        "/Rof/SC": {
+        "api/Rof/SC": {
             "post": {
                 "tags": ["Root of Equation"],
                 "description": "Secant Method"
             }
         },
-        "/Lina/CR": {
+        "api/Lina/CR": {
             "post": {
                 "tags": ["Linear Algebra"],
                 "description": "Cramer's Rule"
             }
         },
-        "/Lina/GE": {
+        "api/Lina/GE": {
             "post": {
                 "tags": ["Linear Algebra"],
                 "description": "Gauss's Eliminate Method"
             }
         },
-        "/Lina/LU": {
+        "api/Lina/LU": {
             "post": {
                 "tags": ["Linear Algebra"],
                 "description": "LU Decomposition Method"
             }
         },
-        "/Lina/CG": {
+        "api/Lina/CG": {
             "post": {
                 "tags": ["Linear Algebra"],
                 "description": "Conjugate Gradient Method"
             }
         },
-        "/Lina/GJ": {
+        "api/Lina/GJ": {
             "post": {
                 "tags": ["Linear Algebra"],
                 "description": "Gauss's Jordan Method"
             }
         },
-        "/Lina/JB": {
+        "api/Lina/JB": {
             "post": {
                 "tags": ["Linear Algebra"],
                 "description": "Jacobi Method"
             }
         },
-        "/Lina/GS": {
+        "api/Lina/GS": {
             "post": {
                 "tags": ["Linear Algebra"],
                 "description": "Gauss's Seidel Method"
             }
         },
-        "/Inter/NT": {
+        "api/Inter/NT": {
             "post": {
                 "tags": ["Interpolation"],
                 "description": "Newton's Divide Difference Method"
             }
         },
-        "/Inter/LG": {
+        "api/Inter/LG": {
             "post": {
                 "tags": ["Interpolation"],
                 "description": "Lagrange Method"
             }
         },
-        "/Inter/SP": {
+        "api/Inter/SP": {
             "post": {
                 "tags": ["Interpolation"],
                 "description": "Spline Method"
             }
         },
-        "/Reg/LN": {
+        "api/Reg/LN": {
             "post": {
                 "tags": ["Regression"],
                 "description": "Linear Regression Method"
             }
         },
-        "/Reg/PL": {
+        "api/Reg/PL": {
             "post": {
                 "tags": ["Regression"],
                 "description": "Polynomial Regression Method"
             }
         },
-        "/Reg/MT": {
+        "api/Reg/MT": {
             "post": {
                 "tags": ["Regression"],
                 "description": "Multi Linear Regression Method"

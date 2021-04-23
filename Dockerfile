@@ -8,6 +8,6 @@ RUN npm install
 
 EXPOSE 8080
 CMD [ "npm", "run" ,"dev" ]
-# docker run -it --rm -d -P 8080:8080 ingcharat/numer-node:lastest
+# docker run -it --rm -d -p 8080:8080 ingcharat/numer-node:lastest
 # build
 # docker build . -t ingcharat/numer-node:lastest

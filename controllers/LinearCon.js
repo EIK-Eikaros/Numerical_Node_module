@@ -1,4 +1,4 @@
-import { multiply, transpose, det, round, lusolve } from 'mathjs'
+import { multiply, transpose, det, round, lusolve, inv } from 'mathjs'
 import linSystem from 'linear-equation-system'
 import rref from 'rref'
 import { fromDense } from 'csr-matrix'
@@ -208,21 +208,44 @@ export const Gauss_S = (req, res) => {
     }
     res.json({ answer: x })
 }
-
 export const Conjugate = (req, res) => {
     const { A, B, x0 } = req.body
     let maA = CvS(A)
     let maB = CvS(B)
     let mA = JSON.parse(maA)
     let mB = JSON.parse(maB)
+    let mo = JSON.parse(maA)
+    let check = true
+    let posi = []
     if (JSON.stringify(mA) != JSON.stringify(transpose(mA))) {
         mB = multiply(transpose(mA), mB)
         mA = multiply(transpose(mA), mA)
     }
-    let MatA = fromDense(mA)
-    let xi = JSON.parse(x0)
-    let result = pcg(MatA, mB, xi, 1e-5, 100)
-    res.json({
-        answer: round(result),
-    })
+    for (let i = 0; i < mA.length; i++) {
+        let t = []
+        for (let j = 0; j <= i; j++) {
+            let q = []
+            for (let k = 0; k <= i; k++) {
+                q.push(mA[j][k])
+            }
+            t.push(q)
+        }
+        posi.push({ t: t, det: det(t) })
+        if (det(t) < 0) {
+            check = false
+            break
+        }
+    }
+    if (check) {
+        let MatA = fromDense(mA)
+        let xi = JSON.parse(x0)
+        let result = pcg(MatA, mB, xi, 1e-5, 100)
+        res.json({
+            answer: round(result),
+            posi: posi,
+            last: multiply(mo, round(result)),
+        })
+    } else {
+        res.json({})
+    }
 }
