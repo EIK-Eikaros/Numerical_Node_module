@@ -59,7 +59,7 @@ export const Langrange = (req, res) => {
     let data = JSON.parse(maA)
     let want = JSON.parse(v)
     let mA = JSON.parse(matB)
-    mA = mA.map((r) => r - 1)
+    mA = mA.map((r) => r + 1)
     const memdiv = []
     let result = 0,
         mul = 0,
@@ -79,11 +79,11 @@ export const Langrange = (req, res) => {
             if (j === i) {
                 continue
             }
-            mul = RangeEqWa[mA[j]]
-            div = memdiv[mA[i]][mA[j]]
+            mul = RangeEqWa[mA[j]-1]
+            div = memdiv[mA[i]-1][mA[j]-1]
             L = L * (mul / div)
         }
-        result += L * data[mA[i]][1]
+        result += L * data[mA[i]-1][1]
         L = 1
     }
     res.json({
