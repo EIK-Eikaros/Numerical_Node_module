@@ -22,7 +22,6 @@ export const Newton_Inter = (req, res) => {
         x = []
     const makeeq = (input) => {
         ;(fx = []), (x = [])
-        input = input.map((value) => value - 1)
         input.map((value) => {
             x.push(mA[value][0])
             fx.push(mA[value][1])
